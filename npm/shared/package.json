@@ -1,0 +1,13 @@
+{
+  "name": "@liberte-top/shared",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./auth": "./src/auth/index.ts",
+    "./openapi": "./src/openapi/index.ts"
+  },
+  "dependencies": {
+    "axios": "1.7.9"
+  }
+}

@@ -2,7 +2,7 @@
 
 ## Current Flow
 - This repository holds stable shared building blocks for `liberte-top` repositories.
-- Current scope is intentionally narrow: one TS-first npm auth package.
+- Current scope is TS-first shared npm packages for auth and OpenAPI/client concerns.
 - Packages are consumed locally by path/link during active iteration.
 
 ## Repository Structure
@@ -10,8 +10,13 @@
 ```text
 packages/
 ├── npm/
-│   └── auth/
+│   ├── auth/
+│   │   ├── src/
+│   │   └── package.json
+│   └── shared/
 │       ├── src/
+│       │   ├── auth/
+│       │   └── openapi/
 │       └── package.json
 ├── package.json
 ├── pnpm-workspace.yaml
