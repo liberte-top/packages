@@ -32,6 +32,7 @@ export type CreateUnauthorizedRedirectHandlerOptions = {
 };
 
 type AuthContextPayload = {
+  authenticated?: boolean;
   subject?: string | null;
   auth_type?: string | null;
   scopes?: string[];
@@ -161,27 +162,18 @@ export function createAuth(options: CreateAuthOptions) {
       return snapshot;
     }
 
-    if (response.status === 401) {
-      snapshot = {
-        ...emptySnapshot(response.headers.get("ETag")),
-        ready: true,
-        updatedAt: new Date().toISOString(),
-      };
-      persist();
-      return snapshot;
-    }
-
     if (!response.ok) {
       throw new Error(`auth refresh failed: ${response.status}`);
     }
 
     const payload = (await response.json()) as AuthContextPayload;
+    const authenticated = payload.authenticated ?? Boolean(payload.subject);
     snapshot = {
       ready: true,
-      authenticated: Boolean(payload.subject),
-      subject: payload.subject ?? null,
-      authType: payload.auth_type ?? null,
-      scopes: payload.scopes ?? [],
+      authenticated,
+      subject: authenticated ? payload.subject ?? null : null,
+      authType: authenticated ? payload.auth_type ?? null : null,
+      scopes: authenticated ? payload.scopes ?? [] : [],
       etag: response.headers.get("ETag"),
       updatedAt: new Date().toISOString(),
     };
