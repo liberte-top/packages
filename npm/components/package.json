@@ -1,0 +1,31 @@
+{
+  "name": "@liberte-top/components",
+  "version": "0.1.0",
+  "type": "module",
+  "svelte": "./src/lib/index.ts",
+  "types": "./src/lib/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/lib/index.ts",
+      "svelte": "./src/lib/index.ts",
+      "default": "./src/lib/index.ts"
+    },
+    "./theme.css": "./src/lib/theme/default.css"
+  },
+  "scripts": {
+    "package": "svelte-kit sync && svelte-package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+  },
+  "peerDependencies": {
+    "svelte": "^5.38.0"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "2.17.1",
+    "@sveltejs/package": "2.3.10",
+    "@sveltejs/vite-plugin-svelte": "4.0.0",
+    "svelte": "5.38.0",
+    "svelte-check": "4.0.0",
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}

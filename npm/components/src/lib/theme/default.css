@@ -1,0 +1,82 @@
+:root {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: #1f2328;
+  background: #f6f8fa;
+  --lt-color-primary: #1f6feb;
+  --lt-color-primary-hover: #1658b5;
+  --lt-color-on-primary: #ffffff;
+  --lt-color-surface: #ffffff;
+  --lt-color-surface-hover: #f6f8fa;
+  --lt-color-border: #d0d7de;
+  --lt-color-border-strong: #8c959f;
+  --lt-color-border-muted: #e6ebf1;
+  --lt-color-text: #1f2328;
+  --lt-color-text-muted: #59636e;
+  --lt-color-text-subtle: #8c959f;
+  --lt-color-fill-muted: #f6f8fa;
+  --lt-color-danger: #cf222e;
+  --lt-color-success: #1a7f37;
+  --lt-color-success-surface: #dafbe1;
+  --lt-color-success-border: #aceebb;
+  --lt-color-danger-surface: #ffebe9;
+  --lt-color-danger-border: #ffcecb;
+  --lt-radius-md: 8px;
+  --lt-radius-lg: 12px;
+  --lt-control-height: 44px;
+  --lt-font-weight-strong: 600;
+  --lt-motion-duration-fast: 120ms;
+  --lt-card-shadow: 0 1px 3px rgba(27, 31, 36, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--lt-page-bg, #f6f8fa);
+  color: var(--lt-color-text);
+}
+
+button,
+input,
+textarea,
+select,
+a {
+  font: inherit;
+}
+
+a {
+  color: var(--lt-link-color, var(--lt-color-primary));
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--lt-focus-outline, rgba(31, 111, 235, 0.28));
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+code {
+  font-family: "IBM Plex Mono", monospace;
+}
