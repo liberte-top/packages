@@ -1,4 +1,5 @@
 import type { AxiosError } from "axios";
+import { ensure } from "../ensure/index";
 
 export type AuthSnapshot = {
   ready: boolean;
@@ -162,9 +163,7 @@ export function createAuth(options: CreateAuthOptions) {
       return snapshot;
     }
 
-    if (!response.ok) {
-      throw new Error(`auth refresh failed: ${response.status}`);
-    }
+    ensure(response.ok, () => new Error(`auth refresh failed: ${response.status}`));
 
     const payload = (await response.json()) as AuthContextPayload;
     const authenticated = payload.authenticated ?? Boolean(payload.subject);
