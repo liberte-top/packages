@@ -1,5 +1,6 @@
 import axios, { type AxiosError, type AxiosInstance, type AxiosRequestConfig, type CreateAxiosDefaults } from "axios";
 import type { UnauthorizedContext } from "../auth/index";
+export * from "./fetch_json";
 
 export type CreateOpenApiClientOptions = {
   axios?: CreateAxiosDefaults;
