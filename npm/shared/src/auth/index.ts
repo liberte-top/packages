@@ -1,4 +1,3 @@
-import type { AxiosError } from "axios";
 import { ensure } from "../ensure/index";
 
 export type AuthSnapshot = {
@@ -20,8 +19,8 @@ export type CreateAuthOptions = {
 };
 
 export type UnauthorizedContext = {
-  error: AxiosError;
   requestUrl: URL | null;
+  status?: number;
 };
 
 export type CreateUnauthorizedRedirectHandlerOptions = {

@@ -7,8 +7,5 @@
     "./auth": "./src/auth/index.ts",
     "./ensure": "./src/ensure/index.ts",
     "./openapi": "./src/openapi/index.ts"
-  },
-  "dependencies": {
-    "axios": "1.7.9"
   }
 }
