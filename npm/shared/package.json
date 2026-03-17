@@ -5,6 +5,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./auth": "./src/auth/index.ts",
+    "./defer": "./src/defer/index.ts",
     "./ensure": "./src/ensure/index.ts",
     "./openapi": "./src/openapi/index.ts"
   }
